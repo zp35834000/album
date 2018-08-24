@@ -42,15 +42,22 @@ function getDefaultModules() {
       },
       {
         test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg)$/,
-        loader: 'url-loader?limit=8192'
+        loader: 'url-loader',
+        query: {
+          limit: 8192,
+          name: 'images/[name].[ext]'
+        }
       },
       {
         test: /\.json$/,
         loader: 'json-loader'
       },
       {
-        test: /\.(mp4|ogg|svg)$/,
-        loader: 'file-loader'
+        test: /\.(mp4|ogg|svg|mp3)$/,
+        loader: 'file-loader',
+        query: {
+          name: 'music/[name].[ext]'
+        }
       }
     ]
   };

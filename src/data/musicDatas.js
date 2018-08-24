@@ -9,14 +9,15 @@ export const MUSIC_LIST = [
     id: 7,
     title: 'love story',
     artist: 'Taylor Swift',
-    file: '../music/file/love story.mp3',
-    cover: '../music/cover/Taylor Swift.jpg'
+    file: './assets/music/Love Story.mp3',
+    // cover: '../music/cover/Taylor Swift.jpg'
+    cover: './assets/images/Taylor Swift.jpg'
   }, {
     id: 8,
     title: '宠护',
     artist: '王理文',
-    file: '../music/file/宠护.mp3',
-    cover: '../music/cover/宠护.jpg'
+    file: './assets/music/宠护.mp3',
+    cover: './assets/images/宠护.jpg'
   }
 
 ];
