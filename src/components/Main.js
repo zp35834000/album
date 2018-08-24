@@ -38,6 +38,13 @@ imagesData = (function getImageURL(imagesDataArray) {
   return imagesDataArray;
 })(imagesData);
 
+MUSIC_LIST = (function getMusicURL(musicDataArray){
+  for (var i = 0; i < musicDataArray.length; i++) {
+    // let actualFile = "."+require('../images/music/file/' + item.file);
+    musicDataArray[i].file = "."+require('../images/music/file/' + musicDataArray[i].file);
+  }
+})(MUSIC_LIST)
+
 /**
  * 获取指定范围内的随机值
  * @param  {min}

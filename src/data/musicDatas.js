@@ -1,15 +1,9 @@
 export const MUSIC_LIST = [
-  {
-    id: 6,
-    title: '成都',
-    artist: '赵雷',
-    file: 'http://oj4t8z2d5.bkt.clouddn.com/%E6%88%90%E9%83%BD.mp3',
-    cover: 'http://oj4t8z2d5.bkt.clouddn.com/%E6%88%90%E9%83%BD.jpg'
-  }, {
+   {
     id: 7,
     title: 'love story',
     artist: 'Taylor Swift',
-    file: './assets/music/Love Story.mp3',
+    file: 'Love Story.mp3',
     // cover: '../music/cover/Taylor Swift.jpg'
     cover: './assets/images/Taylor Swift.jpg'
   }, {
