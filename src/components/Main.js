@@ -38,12 +38,11 @@ imagesData = (function getImageURL(imagesDataArray) {
   return imagesDataArray;
 })(imagesData);
 
-MUSIC_LIST = (function getMusicURL(musicDataArray){
-  for (var i = 0; i < musicDataArray.length; i++) {
-    // let actualFile = "."+require('../images/music/file/' + item.file);
-    musicDataArray[i].file = "."+require('../images/music/file/' + musicDataArray[i].file);
-  }
-})(MUSIC_LIST)
+function getActutalMusicURL(musicFile){
+  musicFile = "."+require('../images/music/file/' + musicFile);
+  return musicFile;
+}
+
 
 /**
  * 获取指定范围内的随机值
@@ -365,6 +364,7 @@ class AppComponent extends React.Component {
 
   playMusic(item) {
     $('#player').jPlayer('setMedia', {
+      // mp3: getActutalMusicURL(item.file)
       mp3: item.file
     }).jPlayer('play');
     this.setState({

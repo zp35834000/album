@@ -1,5 +1,6 @@
 import React from 'react';
 import Progress from './progress';
+
 import {MUSIC_LIST} from '../../data/musicDatas';
 
 let PubSub = require('pubsub-js');
@@ -7,7 +8,10 @@ require('./player.less');
 
 let duration = null;
 
+
+
 let Player = React.createClass({
+
 
   /**
    * 生命周期方法 componentDidMount
@@ -64,6 +68,11 @@ let Player = React.createClass({
   changeVolumeHandler(progress) {
     $('#player').jPlayer('volume', progress);
   },
+
+  // getActutalMusicURL(musicFile){
+  //   musicFile = "."+require('../images/music/file/' + musicFile);
+  //   return musicFile;
+  // },
 
   /**
    * 播放或者暂停方法

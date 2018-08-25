@@ -1,17 +1,38 @@
-export const MUSIC_LIST = [
+let filePrefix = "./assets/music/";
+let coverPrefix = "./assets/images/";
+let MUSIC_LIST = [
    {
     id: 7,
     title: 'love story',
     artist: 'Taylor Swift',
-    file: 'Love Story.mp3',
-    // cover: '../music/cover/Taylor Swift.jpg'
-    cover: './assets/images/Taylor Swift.jpg'
+    file: filePrefix + 'Love Story.mp3',
+    cover: coverPrefix + 'Taylor Swift.jpg'
   }, {
     id: 8,
     title: '宠护',
     artist: '王理文',
-    file: './assets/music/宠护.mp3',
-    cover: './assets/images/宠护.jpg'
+    file: filePrefix + '宠护.mp3',
+    cover: coverPrefix + '宠护.jpg'
   }
 
 ];
+
+//
+let turnMusicFile = function(relativeFile, musicList){
+  debugger;
+  let actualMusicList = [];
+  for (let i = 0; i < musicList.length; i++) {
+    let currentMusicInfo = musicList[i];
+    let tempMusicInfo = {};
+    for (var key in currentMusicInfo) {
+      if(key === 'file' || key === 'cover'){
+        tempMusicInfo[key] = "."+require(relativeFile + currentMusicInfo[key]);
+      }else{
+        tempMusicInfo[key] = currentMusicInfo[key];
+      }
+    }
+    actualMusicList.push(tempMusicInfo);
+  }
+  return actualMusicList;
+}
+export {MUSIC_LIST}
